@@ -1,0 +1,21 @@
+{
+  "sdkDir": "/Users/meysam/Library/Android/sdk",
+  "testsDir": "/Users/meysam/Documents/code/GA2.0_AUTs/AntennaPod/tests",
+  "targetTest": "test_1.sh",
+  "versions": {
+      "before": {
+          "projectDir": "/Users/meysam/Documents/code/GA2.0_AUTs/AntennaPod/case_6/before/antennapod_before",
+          "manifest": "app/src/main/AndroidManifest.xml",
+          "targetApk": "/Users/meysam/Documents/code/GA2.0_AUTs/AntennaPod/case_6/before/bin/app.apk",
+          "instrumentedApk": "/Users/meysam/Documents/code/GA2.0_AUTs/AntennaPod/case_6/before/bin/app_instrumented.apk",
+          "instrumentationTarget": "app/src/main/java/de/danoeh/antennapod"
+      },
+      "after": {
+          "projectDir": "/Users/meysam/Documents/code/GA2.0_AUTs/AntennaPod/case_6/after/antennapod_after",
+          "manifest": "app/src/main/AndroidManifest.xml",
+          "targetApk": "/Users/meysam/Documents/code/GA2.0_AUTs/AntennaPod/case_6/after/bin/app.apk",
+          "instrumentedApk": "/Users/meysam/Documents/code/GA2.0_AUTs/AntennaPod/case_6/after/bin/app_instrumented.apk",
+          "instrumentationTarget": "app/src/main/java/de/danoeh/antennapod"
+      }
+  }
+}

@@ -1,0 +1,36 @@
+7374 published repos
+    943691 commits
+
+battery | energy
+    147 repos 505 commits
+
+gps
+    180 repos 718 commits
+
+memory
+    530 repos 4336 commits
+
+wifi
+    202 repos 1210 commits
+
+bluetooth
+    143 repos 496 commits
+
+
+    Shrink the set
+
+    More regular commits, buildable commits there is more posibility that they could be built
+
+    We should know what the app does to be able to write tests
+
+    We could mine feedbacks of the market later for these sets
+
+
+    blame mine is better then we need different instrumentation
+    explain my and karan's methodology compared
+
+
+paper
+    karans and mine
+        intro/motivation (promise something), related research, methodology
+        evaluation read what to do what should be done

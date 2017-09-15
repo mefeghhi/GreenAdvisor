@@ -1,0 +1,22 @@
+p: Project = input;
+out: output collection[string] of string;
+
+visit(p, visitor {
+    before repo: CodeRepository -> {
+        snapshot := getsnapshot(repo);
+        isAndroidRepo := false;
+        foreach (s: int; match(`AndroidManifest\.xml$`, snapshot[s].name)) {
+            isAndroidRepo = true;
+            break;
+       }
+       if (!isAndroidRepo) stop;
+       packages := "";
+       foreach (s: int; match(`\/\w*\.java$`, snapshot[s].name)) {
+            ast := getast(snapshot[s]);
+            foreach (k: int; def(ast.namespaces[k])) {
+                packages = format("%s;%s", packages, ast.namespaces[k].name);
+            }
+       }
+       out[repo.url] << packages;
+    }
+});

@@ -1,0 +1,20 @@
+p: Project = input;
+out: output collection[string] of string;
+
+visit(p, visitor {
+    before repo: CodeRepository -> {
+        repo_temp := "";
+        snapshot := getsnapshot(repo);
+        isAndroidRepo := false;
+        foreach (s: int; match(`AndroidManifest\.xml$`, snapshot[s].name)) {
+            isAndroidRepo = true;
+            break;
+       }
+       if (!isAndroidRepo) stop;
+       foreach (i: int; def(repo.revisions[i])) {
+            rev_temp := format("$$$REV$$$:%s $$$DATE$$$:%d $$$LOG$$$:%s", repo.revisions[i].id, int(repo.revisions[i].commit_date), repo.revisions[i].log);
+            repo_temp = format("%s%s", repo_temp, rev_temp);
+        }
+        out[repo.url] << format("%s\n", repo_temp);
+    }
+});
